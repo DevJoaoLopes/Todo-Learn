@@ -1,13 +1,24 @@
 <template>
   <div id="app">
     <h1>Lista de Tarefas</h1>
+    <TaskGrid :tasks="tasks"></TaskGrid>
   </div>
 </template>
 
 <script>
+import TaskGrid from './components/TaskGrid.vue'
+
+
 export default {
-  name: 'app',
+  components: { TaskGrid },
+  data: () => ({
+    tasks: [
+      { name: 'Lavar a louça', pending: false },
+      { name: 'Comprar a blusa', pending: true }
+    ]
+  })
 };
+
 </script>
 
 <style>
@@ -32,6 +43,7 @@ body {
   flex: 1;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
 }
 
