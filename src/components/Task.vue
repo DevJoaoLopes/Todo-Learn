@@ -1,6 +1,6 @@
 <template>
   <div :class="stateClass" class="task" @click="$emit('state', task)">
-    <span @click="$emit('deleted', task)" class="close">x</span>
+    <span @click.stop="$emit('deleted', task)" class="close">x</span>
     <p>{{task.name}}</p>
   </div>
 </template>
